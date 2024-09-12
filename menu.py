@@ -10,18 +10,32 @@ class Menu:
         self.num2 = 0
 
     def mostrarMenu(self):
-        print('\n-------MENU------\n\n'        +
-              'Escolha uma das opções abaixo: '+
-              '\n0. sair'                     +
-              '\n1. somar'                     +
-              '\n2. Subtrair'                  +
-              '\n3. Dividir'                   +
-              '\n4. Multiplicar'               +
-              '\n5. Potencia'                  +
-              '\n6. Raiz'                      +
-              '\n7. Tabuada'                   +
-              '\n8. Numeros de 1 a 10'         +
-              '\n9. Numeros Pares de 1 a 20'   +
+        print('\n-------MENU------\n\n'                +
+              'Escolha uma das opções abaixo: '        +
+              '\n0. sair'                              +
+              '\n1. somar'                             +
+              '\n2. Subtrair'                          +
+              '\n3. Dividir'                           +
+              '\n4. Multiplicar'                       +
+              '\n5. Potencia'                          +
+              '\n6. Raiz'                              +
+              '\n7. Tabuada'                           +
+        #Exercicios
+              '\n8. Numeros de 1 a 10'                 +#1
+              '\n9. Numeros Pares de 1 a 20'           +#2
+              '\n10. Soma de 1 a 100'                  +#3
+              '\n11. Numeros multiplos de 5 ate 50'    +#4
+              '\n12. Numero par ou impar'              +#5
+              '\n13. Numero Positivo, Negativo ou Zero'+#6
+              '\n14. Tabuada'                          +#7
+              '\n15. Contagem'                         +#8
+              '\n16. Soma dos numeros'                 +#9
+              '\n17. Numeros primos ate 20'            +#10
+              '\n19. Fatorial'                         +#12
+              '\n20. Fibonacci'                        +#13
+              '\n21. É Fibonacci'                      +#14
+              '\n22. Soma dos digitos'                 +#15
+              '\n23. Numeros par e impar'              +#16
               '\n'
               '')
 
@@ -59,9 +73,51 @@ class Menu:
                 self.coletar()
                 print(f'A tabuada do {self.num1} é {self.opera.tabuada(self.num1)}')
                 print(f'A tabuada do {self.num2} é {self.opera.tabuada(self.num2)}')
-            elif self.opcao == 8:
-                self.coletar()
+#Exercicios
+            elif self.opcao == 8: #1
                 print(f'Os numeros de 1 a 10 são: {self.opera.numAte10()}')
-            elif self.opcao == 9:
-                self.coletar()
+            elif self.opcao == 9: #2
                 print(f'Os numeros pares de 1 a 20 são: {self.opera.numParAte20()}')
+            elif self.opcao == 10: #3
+                print(f'A soma dos numeros de 1 a 100 é: {self.opera.somaAte100()}')
+            elif self.opcao == 11: #4
+                print(f'Os numeros multiplos de 5 de 1 a 50 são: {self.opera.multiplos5()}')
+            elif self.opcao == 12: #5
+                self.coletar()
+                print(f'O numero {self.num1} é: {self.opera.parOuImpar(self.num1)}')
+                print(f'O numero {self.num2} é: {self.opera.parOuImpar(self.num2)}')
+            elif self.opcao == 13: #6
+                self.coletar()
+                print(f'O numero {self.num1} é: {self.opera.posiNegaOuZero(self.num1)}')
+                print(f'O numero {self.num2} é: {self.opera.posiNegaOuZero(self.num2)}')
+            elif self.opcao == 14: #7
+                self.coletar()
+                print(f'A tabuada do {self.num1} é: {self.opera.tabuada(self.num1)}')
+                print(f'A tabuada do {self.num2} é: {self.opera.tabuada(self.num2)}')
+            elif self.opcao == 15: #8
+                self.coletar()
+                print(f'Os numeros de 1 a {self.num1} são: {self.opera.numAteNum(self.num1)}')
+                print(f'Os numeros de 1 a {self.num2} são: {self.opera.numAteNum(self.num2)}')
+            elif self.opcao == 16: #9
+                self.coletar()
+                print(f'A soma dos numeros de 1 ate {self.num1} são: {self.opera.somaAteNum(self.num1)}')
+                print(f'A soma dos numeros de 1 ate {self.num2} são: {self.opera.somaAteNum(self.num2)}')
+            elif self.opcao == 17: #10
+                print(f'Os numeros primos de 1 a 20 são: {self.opera.primos()}')
+            elif self.opcao == 19: #12
+                num1 = int(input('Informe o numero: '))
+                print(f'O fatorial de {num1} é: {self.opera.fatorial(num1)}')
+            elif self.opcao == 20:  #13
+                print(f'A sequencia de fibonacci ate o decimo termo é: {self.opera.fibonacci()}')
+            elif self.opcao == 21: #14
+                numero = int(input("Digite um número: "))
+                if self.opera.seFibonacci(numero):
+                    print("O número pertence à sequência de Fibonacci!")
+                else:
+                    print("O número não pertence à sequência de Fibonacci.")
+            elif self.opcao == 22: #15
+                numero = int(input("Digite um número: "))
+                print(f'A soma dos digitos de {numero} é: {self.opera.somaDigitos(numero)}')
+            elif self.opcao == 23: #16
+                numero = int(input("Digite um número: "))
+                print(f'os numeros pares e impares ate {numero} é: {self.opera.parEImpares(numero)}')

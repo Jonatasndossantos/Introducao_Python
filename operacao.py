@@ -40,17 +40,108 @@ class Operacao:
     def raiz(self, num):
         return math.sqrt(num)
 
-    def numAte10(self):
+#Exercicios
+    def numAte10(self): #1
         resul = ""
         for i in range(1, 10, 1):
             resul += f'\n{i}'
         return resul
 
-    def numParAte20(self):
+    def numParAte20(self): #2
         resul = ""
         for i in range(1, 20, 1):
             if i % 2 == 0:
                 resul += f'\n{i}'
         return resul
-    def somaAte100(self):
+    def somaAte100(self): #3
+        resul = int()
+        for i in range(1, 101, 1):
+            resul += i
+        return resul
+    def multiplos5(self): #4
         resul = ""
+        for i in range(1, 51, 1):
+            if i % 5 == 0:
+                resul += f'\n{i}'
+        return resul
+    def parOuImpar(self, num1): #5
+        if num1 % 2 == 0:
+            return f'Par'
+        else:
+            return f'Impar'
+    def posiNegaOuZero(self, num1): #6
+        if num1 > 0:
+            return f'Positivo'
+        elif num1 == 0:
+            return f'Zero'
+        elif num1 < 0:
+            return f'Negativo'
+    def numAteNum(self, num1): #8
+        resul = ""
+        for i in range(1, num1, 1):
+            resul += f'\n{i}'
+        return resul
+
+    def somaAteNum(self, num1):  #9
+        resul = 0
+        msg = ""
+        for i in range(1, num1, 1):
+            msg += f'\n {resul} + {i} = {resul + i}'
+            resul += i
+        return msg
+    def primos(self): #10
+        resul = ""
+        for i in range(1, 20, 1):
+            if (i%2==0) & (i%3==0) & (i%5==0) & (i%7==0):
+                resul += f'\n {i}'
+        return resul
+
+    def sePrimo(self,number):
+        if number < 2:
+            return "False"
+        for i in range(2, int(number ** 0.5) + 1):
+            if number % i == 0:
+               return "False"
+        return "True"
+
+    def fatorial(self,num1): #12
+        resul = 1
+        for i in range(1, num1, 1):
+            resul *= i
+        return resul
+    def fibonacci(self): #13
+        resul = 1
+        ult = 1
+        penult = 1
+
+        for i in range(2, 10, 1):
+            resul = ult + penult
+            penult = ult
+            ult = resul
+        return resul
+
+    def seFibonacci(self, n): #14
+        a, b = 0, 1
+        while b < n:
+            a, b = b, a + b
+        return b == n
+
+    def somaDigitos(self,n): #15
+        s = 0
+        while n:
+            s += n % 10  # Soma `s` ao ultimo numeral de `n`
+            n //= 10  # Remove o ultimo numero de `n`
+        return s
+    def parEImpares(self,n): #16
+        resul = ""
+        for i in range(1, n, 1):
+            resul += f'\n{i} {self.parOuImpar(i)}'
+        return resul
+
+    def impPrimo(self,n): #17
+        resul = ""
+        for i in range(0, n, 1):
+            resul += f'\n {self.primos(i)}'
+        return resul
+
+
