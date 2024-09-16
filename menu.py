@@ -36,6 +36,10 @@ class Menu:
               '\n21. É Fibonacci'                      +#14
               '\n22. Soma dos digitos'                 +#15
               '\n23. Numeros par e impar'              +#16
+              '\n24. Numeros primos'                   +#17
+              '\n25. Sequencia de collatz'             +#18
+              '\n26. Soma de pares e impares'          +#19
+              '\n27. Numero perfeito'                  +#20
               '\n'
               '')
 
@@ -103,7 +107,7 @@ class Menu:
                 print(f'A soma dos numeros de 1 ate {self.num1} são: {self.opera.somaAteNum(self.num1)}')
                 print(f'A soma dos numeros de 1 ate {self.num2} são: {self.opera.somaAteNum(self.num2)}')
             elif self.opcao == 17: #10
-                print(f'Os numeros primos de 1 a 20 são: {self.opera.primos()}')
+                print(f'Os numeros primos de 1 a 20 são: {self.opera.primos(20)}')
             elif self.opcao == 19: #12
                 num1 = int(input('Informe o numero: '))
                 print(f'O fatorial de {num1} é: {self.opera.fatorial(num1)}')
@@ -121,3 +125,21 @@ class Menu:
             elif self.opcao == 23: #16
                 numero = int(input("Digite um número: "))
                 print(f'os numeros pares e impares ate {numero} é: {self.opera.parEImpares(numero)}')
+            elif self.opcao == 24: #17
+                numero = int(input("Digite um número: "))
+                print(f'os numeros primos ate {numero} é: {self.opera.impPrimo(numero)}')
+            elif self.opcao == 25: #18
+                numero = int(input("Digite um número: "))
+                print(f'A sequencia de collatz de {numero} é: {self.opera.collatz(numero)}')
+            elif self.opcao == 26: #19
+                numero = int(input("Digite um número: "))
+                print(f'A soma dos numeros Pares e Impares ate: {numero} são: {self.opera.somaParImpar(numero)}')
+            elif self.opcao == 27: #20
+                numero = int(input("Digite um número: "))
+                if self.opera.perfeito(numero):
+                    print(f"O número {numero} pertence aos numeros perfeitos!{self.opera.perfeito(numero)}")
+                else:
+                    print(f"O número {numero} nao pertence aos numeros perfeitos.{self.opera.perfeito(numero)}")
+
+
+

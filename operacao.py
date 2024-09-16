@@ -89,11 +89,16 @@ class Operacao:
             msg += f'\n {resul} + {i} = {resul + i}'
             resul += i
         return msg
-    def primos(self): #10
-        resul = ""
-        for i in range(1, 20, 1):
-            if (i%2==0) & (i%3==0) & (i%5==0) & (i%7==0):
-                resul += f'\n {i}'
+    def primos(self, n): #10
+        resul = "\n 2 \n 3 \n 5 \n 7"
+        j = 0
+        p = 2
+        for i in range(1, n, 1):
+            while i >= j:
+                if p%2 != 0 and p%3 != 0 and p%5 != 0 and p%7 != 0:
+                    resul += f'\n {p}'
+                    j += 1
+                p += 1
         return resul
 
     def sePrimo(self,number):
@@ -139,9 +144,43 @@ class Operacao:
         return resul
 
     def impPrimo(self,n): #17
+        resul = "\n 2 \n 3 \n 5 \n 7"
+        j = 0
+        p = 2
+        for i in range(1, n, 1):
+            while i >= j:
+                if p % 2 != 0 and p % 3 != 0 and p % 5 != 0 and p % 7 != 0:
+                    resul += f'\n {p}'
+                    j += 1
+                if n == p:
+                    return resul
+                p += 1
+    def collatz(self,x):
         resul = ""
-        for i in range(0, n, 1):
-            resul += f'\n {self.primos(i)}'
+        while x > 1:
+            if x % 2 == 0:
+                x /= 2
+                resul += f'\n {x}'
+            else:
+                x = 3 * x + 1
+                resul += f'\n {x}'
         return resul
 
+    def somaParImpar(self, n):
+        resul = ""
+        par = 0
+        impar = 0
+        for i in range(1, n, 1):
+            if i%2==0:
+                par += i
+            else:
+                impar += i
+        resul = f'\n {par} pares \n {impar} impares'
+        return resul
 
+    def perfeito(self,n):
+        soma = n
+        for i in range(1, (n-1), 1):
+            if n % i == 0:
+                soma -= i
+        return soma == 0
