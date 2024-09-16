@@ -40,6 +40,14 @@ class Menu:
               '\n25. Sequencia de collatz'             +#18
               '\n26. Soma de pares e impares'          +#19
               '\n27. Numero perfeito'                  +#20
+        #Exercícios C#
+              '\n28. Trocas de valor'                  +#1
+              '\n29. Antecessor'                       +#2
+              '\n30. Area retangulo'                   +#3
+              '\n31. Sua idade em dias'                +#4
+              '\n32. Percentual de eleitores'          +#5
+              '\n33. Reajuste de salario'              +#6
+
               '\n'
               '')
 
@@ -77,6 +85,7 @@ class Menu:
                 self.coletar()
                 print(f'A tabuada do {self.num1} é {self.opera.tabuada(self.num1)}')
                 print(f'A tabuada do {self.num2} é {self.opera.tabuada(self.num2)}')
+
 #Exercicios
             elif self.opcao == 8: #1
                 print(f'Os numeros de 1 a 10 são: {self.opera.numAte10()}')
@@ -141,5 +150,28 @@ class Menu:
                 else:
                     print(f"O número {numero} nao pertence aos numeros perfeitos.{self.opera.perfeito(numero)}")
 
-
-
+#Exercícios C#
+            elif self.opcao == 28: #1
+                print(f'A = 10 B = 20 vira {self.opera.trocaV()}')
+            elif self.opcao == 29: #2
+                n = int(input("Informe um Valor: "))
+                print(f'O antecessor de {n} é: {self.opera.antecessor(n)}')
+            elif self.opcao == 30: #3
+                base = int(input("Informe a Base: "))
+                altura = int(input("Informe a Altura: "))
+                print(f'A Area do triangulo é: {self.opera.areaRetangulo(base,altura)}')
+            elif self.opcao == 31: #4
+                ano = int(input("Informe os anos: "))
+                mes = int(input("Informe os meses: "))
+                dia = int(input("Informe os dias: "))
+                print(f'Sua idade expressa apenas em dias é: {self.opera.anosEmDias(ano,mes,dia)}')
+            elif self.opcao == 32: #5
+                total = int(input("Informe o Total de Eleitores: "))
+                brancos = int(input("Informe o Total de votos Brancos: "))
+                nulos = int(input("Informe o Total de votos Nulos: "))
+                validos = int(input("Informe o Total de votos Validos: "))
+                print(f'O percentual dos Eleitores é: {self.opera.percentualEleitores(total,brancos,nulos,validos)}')
+            elif self.opcao == 33: #6
+                salario = int(input("Informe o salario: "))
+                percentual = int(input("Informe o Percentual: "))
+                print(f'O valor do novo salario é: {self.opera.reajusteSalario(salario,percentual)}')

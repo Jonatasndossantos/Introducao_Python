@@ -184,3 +184,30 @@ class Operacao:
             if n % i == 0:
                 soma -= i
         return soma == 0
+
+
+
+#Exercícios C#
+    def trocaV(self): #1
+        A = 10
+        B = 20
+        (A,B)=(B,A)
+        return (A,B)
+
+    def antecessor(self,n): #2
+        return (n-1)
+
+    def areaRetangulo(self,base,altura): #3
+        return (base * altura)
+
+    def anosEmDias(self,ano,mes,dia): #4
+        return (dia + (mes*30)+(ano*365))
+
+    def percentualEleitores(self,total,brancos,nulos,validos): #5
+        return (f'\n Brancos: {brancos/total*100}%' +
+               f'\n Nulos: {nulos / total * 100}%' +
+               f'\n Validos: {validos / total * 100}%'
+                )
+
+    def reajusteSalario(self,salario,percentual): #6
+        return (salario+(salario*(percentual/100)))
