@@ -47,6 +47,11 @@ class Menu:
               '\n31. Sua idade em dias'                +#4
               '\n32. Percentual de eleitores'          +#5
               '\n33. Reajuste de salario'              +#6
+              '\n34. Reajuste do custo'                +#7
+              '\n35. Media de 3 notas'                 +#8
+              '\n36. Preço das maças'                  +#9
+              '\n37. Ordem crescente de 10 valores'    +#10
+              '\n38. Salario com comisssao'            +#11
 
               '\n'
               '')
@@ -175,3 +180,30 @@ class Menu:
                 salario = int(input("Informe o salario: "))
                 percentual = int(input("Informe o Percentual: "))
                 print(f'O valor do novo salario é: {self.opera.reajusteSalario(salario,percentual)}')
+            elif self.opcao == 34: #7
+                custo = int(input("Informe o custo: "))
+                print(f'O custo final para o consumidor é: {self.opera.custoFinal(custo)}')
+            elif self.opcao == 35: #8
+                nota1 = int(input("Informe a primeira nota: "))
+                nota2 = int(input("Informe a segunda nota: "))
+                nota3 = int(input("Informe a terceira nota: "))
+                print(f'A media das notas é: {self.opera.media(nota1, nota2, nota3)}')
+            elif self.opcao == 36: #9
+                maca = int(input("Informe a quantidade de maças: "))
+                print(f'O valor total é: R${self.opera.macas(maca)}')
+            elif self.opcao == 37: #10
+                vetor = []
+                for i in range(0,10,1):
+                    vetor.append(input(f'Informe o {i}º valor: '))
+                print(f'A ordem crescente dos valores é: {self.opera.ordem(vetor)}')
+            elif self.opcao == 38: #11
+                salario = int(input("Informe o salario: "))
+                vendas = int(input("Informe o valor das vendas: "))
+                print(f'O Salario total é: {self.opera.comissao(salario, vendas)}')
+            elif self.opcao == 39: #12
+                numero = int(input("Informe o salario: "))
+                saldo = int(input("Informe o valor das vendas: "))
+                debido = int(input("Informe o salario: "))
+                credito = int(input("Informe o valor das vendas: "))
+
+

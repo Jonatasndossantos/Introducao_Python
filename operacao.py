@@ -211,3 +211,24 @@ class Operacao:
 
     def reajusteSalario(self,salario,percentual): #6
         return (salario+(salario*(percentual/100)))
+
+    def custoFinal(self,custo): #7
+        return (custo + (28 / 100) + (45 / 100) + custo)
+
+    def media(self,nota1,nota2,nota3): #8
+        return ((nota1+nota2+nota3)/3)
+
+    def macas(self,maca): #9
+        if maca < 12:
+            return maca
+        else:
+            return (maca*(13/10))
+
+    def ordem(self,vetor): #10
+        return sorted(vetor)
+
+    def comissao(self, salario, vendas): #11
+        if vendas <= 1500:
+            return (salario + (vendas*(3/100)))
+        else:
+            return (salario+(vendas*(5/100)))
