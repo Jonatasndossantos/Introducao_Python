@@ -96,9 +96,8 @@ class Menu:
                 print(f'A raiz de {self.num1} é: {self.opera.raiz(self.num1)}')
                 print(f'A raiz de {self.num2} é: {self.opera.raiz(self.num2)}')
             elif self.opcao == 7:
-                self.coletar()
-                print(f'A tabuada do {self.num1} é {self.opera.tabuada(self.num1)}')
-                print(f'A tabuada do {self.num2} é {self.opera.tabuada(self.num2)}')
+                num1 = int(input('Informe o primeiro número: '))
+                print(f'A tabuada do {num1} é {self.opera.tabuada(num1)}')
 
 #Exercicios
             elif self.opcao == 8: #1
@@ -110,25 +109,20 @@ class Menu:
             elif self.opcao == 11: #4
                 print(f'Os numeros multiplos de 5 de 1 a 50 são: {self.opera.multiplos5()}')
             elif self.opcao == 12: #5
-                self.coletar()
-                print(f'O numero {self.num1} é: {self.opera.parOuImpar(self.num1)}')
-                print(f'O numero {self.num2} é: {self.opera.parOuImpar(self.num2)}')
+                num1 = int(input('Informe o primeiro número: '))
+                print(f'O numero {num1} é: {self.opera.parOuImpar(num1)}')
             elif self.opcao == 13: #6
-                self.coletar()
-                print(f'O numero {self.num1} é: {self.opera.posiNegaOuZero(self.num1)}')
-                print(f'O numero {self.num2} é: {self.opera.posiNegaOuZero(self.num2)}')
+                num1 = int(input('Informe o primeiro número: '))
+                print(f'O numero {num1} é: {self.opera.posiNegaOuZero(num1)}')
             elif self.opcao == 14: #7
-                self.coletar()
-                print(f'A tabuada do {self.num1} é: {self.opera.tabuada(self.num1)}')
-                print(f'A tabuada do {self.num2} é: {self.opera.tabuada(self.num2)}')
+                num1 = int(input('Informe o primeiro número: '))
+                print(f'A tabuada do {num1} é: {self.opera.tabuada(num1)}')
             elif self.opcao == 15: #8
-                self.coletar()
-                print(f'Os numeros de 1 a {self.num1} são: {self.opera.numAteNum(self.num1)}')
-                print(f'Os numeros de 1 a {self.num2} são: {self.opera.numAteNum(self.num2)}')
+                num1 = int(input('Informe o primeiro número: '))
+                print(f'Os numeros de 1 a {num1} são: {self.opera.numAteNum(num1)}')
             elif self.opcao == 16: #9
-                self.coletar()
-                print(f'A soma dos numeros de 1 ate {self.num1} são: {self.opera.somaAteNum(self.num1)}')
-                print(f'A soma dos numeros de 1 ate {self.num2} são: {self.opera.somaAteNum(self.num2)}')
+                num1 = int(input('Informe o primeiro número: '))
+                print(f'A soma dos numeros de 1 ate {num1} são: {self.opera.somaAteNum(num1)}')
             elif self.opcao == 17: #10
                 print(f'Os numeros primos de 1 a 20 são: {self.opera.primos(20)}')
             elif self.opcao == 19: #12
