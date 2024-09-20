@@ -52,6 +52,15 @@ class Menu:
               '\n36. Preço das maças'                  +#9
               '\n37. Ordem crescente de 10 valores'    +#10
               '\n38. Salario com comisssao'            +#11
+              '\n39. Verificar saldo'                  +#12
+              '\n40. Tabuada'                          +#13
+              '\n41. Numeros de 1 a num'               +#14
+              '\n42. Numeros negativos'                +#15
+              '\n43. Soma dos menores que 40'          +#16
+              '\n44. A media aritmética de 15 a 100'   +#17
+              '\n45. A media e o maior'                +#18
+              '\n46. Turma de 20 alunos'               +#19
+              '\n47. Prefeitura'                       +#20
 
               '\n'
               '')
@@ -187,7 +196,7 @@ class Menu:
                 nota1 = int(input("Informe a primeira nota: "))
                 nota2 = int(input("Informe a segunda nota: "))
                 nota3 = int(input("Informe a terceira nota: "))
-                print(f'A media das notas é: {self.opera.media(nota1, nota2, nota3)}')
+                print(f'A media das notas é: {self.opera.mediaNota(nota1, nota2, nota3)}')
             elif self.opcao == 36: #9
                 maca = int(input("Informe a quantidade de maças: "))
                 print(f'O valor total é: R${self.opera.macas(maca)}')
@@ -201,9 +210,65 @@ class Menu:
                 vendas = int(input("Informe o valor das vendas: "))
                 print(f'O Salario total é: {self.opera.comissao(salario, vendas)}')
             elif self.opcao == 39: #12
-                numero = int(input("Informe o salario: "))
-                saldo = int(input("Informe o valor das vendas: "))
-                debido = int(input("Informe o salario: "))
-                credito = int(input("Informe o valor das vendas: "))
+                numero = int(input("Informe o numero da conta: "))
+                saldo   = int(input("Informe o seu saldo: "))
+                debito  = int(input("Informe o seu debido: "))
+                credito = int(input("Informe o seu credito: "))
+                print(f'O saldo atual é: {self.opera.saldo(saldo, debito, credito)}')
+            elif self.opcao == 40: #13
+                num = -1
+                while not num > 1 and num < 10:
+                    num = int(input("Informe um numero: "))
+                    if num < 1 or num > 10:
+                        print("numero invalido, escreva de 1 a 10")
+                    else:
+                        print(f'A tabuada do {num} é {self.opera.tabuada(num)}')
+            elif self.opcao == 41: #14
+                num1 = int(input("Informe um numero: "))
+                print(f'Os numeros de 1 a {num1} são: {self.opera.numAteNum(num1)}')
+            elif self.opcao == 42: #15
+                vetor = []
+                for i in range(0,10,1):
+                    vetor.append(int(input(f'Informe o {i}º valor: ')))
+                print(f'A quantidade de numeros negativos são: {self.opera.numNegativo(vetor)}')
+            elif self.opcao == 43: #16
+                vetor = []
+                for i in range(0,10,1):
+                    vetor.append(int(input(f'Informe o {i}º valor: ')))
+                print(f'O valor da soma dos numors inferiores a 40 são: {self.opera.somaMenor40(vetor)}')
+            elif self.opcao == 44: #17
+                print(f'A media aritmética de 15 a 100 é: {self.opera.mediaAritmetica(15,100)} ')
+            elif self.opcao == 45: #18
+                q = int(input("Informe a quantidade: "))
+                vetor = []
+                for i in range(1,(q+1),1):
+                    vetor.append(int(input(f'Informe o {i}º valor: ')))
+                print(f'A media é: {self.opera.media(vetor)} \n '
+                      f'O maior é: {self.opera.maior(vetor)}')
+            elif self.opcao == 46: #19
+                vetor = []
+                for i in range(1, 21, 1):
+                    vetor.append(int(input(f'Informe o {i}º valor: ')))
+                print(f'A media da turma é: {self.opera.media(vetor)}\n'
+                      f'A quantidade de alunos acima da media é: {self.opera.acimaDaMedia(vetor)}\n')
+            elif self.opcao == 47: #20
+                sal = []
+                fil = []
+                i = 0
+                q = 0
+                while True:
+                    sal.append(int(input("Informe o salario: ") ))
+                    fil.append(int(input("Informe a quantidade de filhos: ")))
+                    q = sal[i]
+                    i += 1
+                    if q < 0:
+                        break
+                print(f'A media do salario é: {self.opera.media(sal)}\n'
+                      f'A media do numero de filhos é: {self.opera.media(fil)}\n'
+                      f'O maior salario é: {self.opera.maior(sal)}\n'
+                      f'O percentual de pessoas com salario menor que 150 é: {self.opera.percentual150(sal)}%\n'
+                      )
+
+
 
 

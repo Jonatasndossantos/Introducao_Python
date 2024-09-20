@@ -78,7 +78,7 @@ class Operacao:
             return f'Negativo'
     def numAteNum(self, num1): #8
         resul = ""
-        for i in range(1, num1, 1):
+        for i in range(1, (num1+1), 1):
             resul += f'\n{i}'
         return resul
 
@@ -215,7 +215,7 @@ class Operacao:
     def custoFinal(self,custo): #7
         return (custo + (28 / 100) + (45 / 100) + custo)
 
-    def media(self,nota1,nota2,nota3): #8
+    def mediaNota(self,nota1,nota2,nota3): #8
         return ((nota1+nota2+nota3)/3)
 
     def macas(self,maca): #9
@@ -232,3 +232,47 @@ class Operacao:
             return (salario + (vendas*(3/100)))
         else:
             return (salario+(vendas*(5/100)))
+
+    def saldo(self,saldo,debito,credito): #12
+        if (saldo - debito + credito) >= 0:
+            return "positivo"
+        elif (saldo - debito + credito) < 0:
+            return "negativo"
+
+    def numNegativo(self,vetor): #15
+        resul=0
+        for i in range(len(vetor)):
+            if vetor[i] < 0:
+                resul += 1
+        return resul
+
+    def somaMenor40(self,vetor): #16
+        soma = 0
+        for i in range(len(vetor)):
+            if vetor[i] < 40:
+                soma += vetor[i]
+        return soma
+
+    def mediaAritmetica(self, num1, num2): #17
+        num2 += 1
+        numeros = range(num1, num2)
+        media = sum(numeros) / len(numeros)
+        return(media)  # 57.5
+
+    def media(self,vetor):
+        return (sum(vetor) / len(vetor))
+
+    def maior(self,vetor):
+        return max(vetor)
+
+    def acimaDaMedia(self,vetor):
+        media = self.media(vetor)
+        return sum( i > media for i in vetor)
+
+    def abaixoDaMedia(self,vetor,media):
+        media = self.media(vetor)
+        return sum( i < media for i in vetor)
+
+    def percentual150(self,vetor):
+        return (sum(i < 150 for i in vetor)/len(vetor)*100)
+
